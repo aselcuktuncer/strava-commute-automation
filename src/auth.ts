@@ -1,3 +1,5 @@
+import { STRAVA_API } from "./main";
+
 export const getAccessToken = async (): Promise<string> => {
   const STRAVA_CLIENT_ID = process.env.STRAVA_CLIENT_ID;
   const STRAVA_CLIENT_SECRET = process.env.STRAVA_CLIENT_SECRET;
@@ -9,13 +11,14 @@ export const getAccessToken = async (): Promise<string> => {
     );
   }
 
-  const params = new URLSearchParams();
-  params.append("client_id", STRAVA_CLIENT_ID);
-  params.append("client_secret", STRAVA_CLIENT_SECRET);
-  params.append("refresh_token", STRAVA_REFRESH_TOKEN);
-  params.append("grant_type", "refresh_token");
+  const params = new URLSearchParams({
+    client_id: STRAVA_CLIENT_ID,
+    client_secret: STRAVA_CLIENT_SECRET,
+    refresh_token: STRAVA_REFRESH_TOKEN,
+    grant_type: "refresh_token",
+  });
 
-  const res = await fetch("https://www.strava.com/api/v3/oauth/token", {
+  const res = await fetch(`${STRAVA_API}/oauth/token`, {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: params.toString(),
