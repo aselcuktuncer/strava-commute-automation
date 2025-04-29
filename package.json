@@ -2,7 +2,7 @@
 	"name": "strava-commute-automation",
 	"author": "aselcuktuncer",
 	"version": "1.0.0",
-	"description": "Automatically assign gear to commute activities and hide them from feed on Strava.",
+	"description": "Automate gear tagging and feed visibility for commute activities on Strava.",
 	"main": "dist/main.js",
 	"scripts": {
 		"dev": "ts-node src/main.ts",
