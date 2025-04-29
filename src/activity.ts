@@ -15,7 +15,7 @@ export interface Activity {
 const GEAR_ID = process.env.STRAVA_COMMUTE_BIKE_ID; 
 
 const getActivities = async (accessToken: string): Promise<Activity[]> => {
-	const bufferMinutes = 1800; // 3 hours
+	const bufferMinutes = 180; // 3 hours
 	const afterTimestamp = Math.floor(Date.now() / 1000) - bufferMinutes * 60;
 
 	const res = await fetch(
@@ -41,7 +41,6 @@ const updateActivityById = async (
 	id: number,
 	update: { gear_id?: string; hide_from_home?: boolean },
 ) => {
-	console.log(update)
 	const res = await fetch(`${STRAVA_API}/activities/${id}`, {
 		method: "PUT",
 		headers: {

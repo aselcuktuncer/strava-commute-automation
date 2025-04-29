@@ -11,7 +11,7 @@ const run = async () => {
 
   await updateActivities(token);
 
-  console.log("CRON job completed successfully!");
+  console.log("CRON job completed successfully.");
 };
 
 run().catch((err) => {
