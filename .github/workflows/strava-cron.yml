@@ -1,4 +1,4 @@
-name: Strava Commuten Automation Cron Job
+name: Strava Commute Automation Cron Job
 
 on:
   schedule:
