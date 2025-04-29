@@ -2,14 +2,12 @@
 	"name": "strava-commute-automation",
 	"author": "aselcuktuncer",
 	"version": "1.0.0",
-	"description": "Automatically assign gear and set commute activities private on Strava.",
+	"description": "Automatically assign gear to commute activities and hide them from feed on Strava.",
 	"main": "dist/main.js",
 	"scripts": {
 		"dev": "ts-node src/main.ts",
 		"build": "tsc",
-		"start": "node dist/main.js",
-		"lint": "biome check .",
-		"format": "biome format ."
+		"start": "node dist/main.js"
 	},
 	"keywords": [
 		"strava",
@@ -17,20 +15,18 @@
 		"commute",
 		"bike",
 		"privacy",
-		"gear",
-		"typescript"
+		"gear"
 	],
 	"license": "ISC",
+	"dependencies": {
+		"dotenv": "^16.5.0"
+	},
 	"devDependencies": {
-		"@biomejs/biome": "1.9.4",
 		"@types/node": "^22.15.3",
 		"ts-node": "^10.9.2",
 		"typescript": "^5.8.3"
 	},
 	"engines": {
 		"node": ">=18"
-	},
-	"dependencies": {
-		"dotenv": "^16.5.0"
 	}
 }
