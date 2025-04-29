@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
+import { updateActivities } from "./activity";
 import { getAccessToken } from "./auth";
-import { updateActivities } from "./cron-job";
 
 dotenv.config();
 
